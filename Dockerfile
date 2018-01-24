@@ -27,12 +27,15 @@ RUN pip3 install numpy
 WORKDIR opencv-3.3.0
 RUN mkdir build
 WORKDIR build
-RUN cmake -D CMAKE_BUILD_TYPE=RELEASE \
+RUN  cmake -D CMAKE_BUILD_TYPE=RELEASE \
     -D CMAKE_INSTALL_PREFIX=/usr/local \
-    -D INSTALL_PYTHON_EXAMPLES=ON \
     -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib-3.3.0/modules \
-    -D BUILD_EXAMPLES=ON ..
-
+    -D ENABLE_NEON=ON \
+    -D ENABLE_VFPV3=ON \
+    -D BUILD_TESTS=OFF \
+    -D INSTALL_PYTHON_EXAMPLES=OFF \
+    -D BUILD_EXAMPLES=OFF ..
+    
 #Open your /etc/dphys-swapfile  and then edit the CONF_SWAPSIZE  variable:
 #CONF_SWAPSIZE=1024
 
