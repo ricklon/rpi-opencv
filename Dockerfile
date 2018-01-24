@@ -1,7 +1,7 @@
 FROM resin/rpi-raspbian:latest  
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
-   wget build-essential cmake pkg-config \
+   wget unzip build-essential cmake pkg-config \
    libjpeg-dev libtiff5-dev libjasper-dev libpng12-dev \
    libavcodec-dev libavformat-dev libswscale-dev libv4l-dev \
    libxvidcore-dev libx264-dev \
