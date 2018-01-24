@@ -7,7 +7,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
    libxvidcore-dev libx264-dev \
    libgtk2.0-dev libgtk-3-dev \
    libatlas-base-dev gfortran \
-   python3-dev python3-pip \
+   python3-dev python3-pip 
 
 WORKDIR opencv
 
