@@ -44,9 +44,12 @@ RUN sed -i 's/CONF_SWAPSIZE=100$/CONF_SWAPSIZE=1024/' /etc/dphys-swapfile
 RUN /etc/init.d/dphys-swapfile stop
 RUN /etc/init.d/dphys-swapfile start
 
-RUN make -j2
+RUN make -j3
 RUN make install
 RUN ldconfig
+# TODO: Test that opencv is installed properly
 
-WORKDIR /usr/local/lib/python3.5/site-packages/
-RUN mv cv2.cpython-35m-arm-linux-gnueabihf.so cv2.so
+# Clean up and reduce the image size by deleting files
+WORKDIR /
+RUN rm -rf /opencv
+
